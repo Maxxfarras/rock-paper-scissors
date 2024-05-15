@@ -1,6 +1,9 @@
 
 let input = prompt('Choose Rock (1), Paper (2), Scissors (3)')
 
+let humanScore = 0
+let computerScore = 0
+
 function getComputerChoice () {
     let randomNumber = Math.floor(Math.random() * 3);
 
@@ -14,7 +17,6 @@ function getComputerChoice () {
 }
 
 function getHumanChoice () {
-
     if (input === '1') {
         return 'Rock';
     } else if (input === '2') {
@@ -26,4 +28,9 @@ function getHumanChoice () {
     }
 }
 
-console.log(getHumanChoice());
+let humanChoice = getHumanChoice();
+let computerChoice = getComputerChoice();
+
+function playGame (humanChoice, computerChoice) {
+    
+}
