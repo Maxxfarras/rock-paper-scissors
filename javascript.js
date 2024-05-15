@@ -17,7 +17,8 @@ function getComputerChoice () {
 }
 
 function getHumanChoice () {
-    if (input === '1') {
+    return input;
+    /*if (input === '1') {
         return 'Rock';
     } else if (input === '2') {
         return 'Paper';
@@ -25,10 +26,10 @@ function getHumanChoice () {
         return 'Scissors';
     } else {
         alert('Invalid Value, Try Again')
-    }
+    }*/
 }
 
-let humanChoice = getHumanChoice();
+let humanChoice = getHumanChoice().charAt(0).toUpperCase() + getHumanChoice().slice(1);
 let computerChoice = getComputerChoice();
 
 function playGame (humanChoice, computerChoice) {
