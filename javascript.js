@@ -18,20 +18,20 @@ function getComputerChoice () {
 
 function getHumanChoice () {
     return input;
-    /*if (input === '1') {
-        return 'Rock';
-    } else if (input === '2') {
-        return 'Paper';
-    } else if (input === '3') {
-        return 'Scissors';
-    } else {
-        alert('Invalid Value, Try Again')
-    }*/
+
 }
 
 let humanChoice = getHumanChoice().charAt(0).toUpperCase() + getHumanChoice().slice(1);
 let computerChoice = getComputerChoice();
 
 function playGame (humanChoice, computerChoice) {
-    
+    if (humanChoice === computerChoice) {
+        return 'Draw'
+    } else if (humanChoice === 'Paper' && computerChoice === 'Rock') {
+        'You Win';
+    }
 }
+
+playGame(humanChoice, computerChoice)
+console.log(humanChoice)
+console.log(computerChoice)
