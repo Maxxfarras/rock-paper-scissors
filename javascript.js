@@ -1,4 +1,6 @@
 
+let input = prompt('Choose Rock, Paper or Scissors')
+
 function getComputerChoice () {
     let randomNumber = Math.floor(Math.random() * 3);
 
@@ -11,6 +13,10 @@ function getComputerChoice () {
     }
 }
 
+function getHumanChoice () {
+
+}
+
 /*
 PSEUDOCODE
 
@@ -18,4 +24,4 @@ PSEUDOCODE
 2. Make function to choose randomly a constant
 */ 
 
-console.log(getComputerChoice());
+console.log(input);
