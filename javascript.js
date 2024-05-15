@@ -1,5 +1,5 @@
 
-let input = prompt('Choose Rock, Paper or Scissors')
+let input = prompt('Choose Rock (1), Paper (2), Scissors (3)')
 
 function getComputerChoice () {
     let randomNumber = Math.floor(Math.random() * 3);
@@ -15,13 +15,15 @@ function getComputerChoice () {
 
 function getHumanChoice () {
 
+    if (input === '1') {
+        return 'Rock';
+    } else if (input === '2') {
+        return 'Paper';
+    } else if (input === '3') {
+        return 'Scissors';
+    } else {
+        alert('Invalid Value, Try Again')
+    }
 }
 
-/*
-PSEUDOCODE
-
-1. Define constants
-2. Make function to choose randomly a constant
-*/ 
-
-console.log(input);
+console.log(getHumanChoice());
