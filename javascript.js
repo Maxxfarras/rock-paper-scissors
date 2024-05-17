@@ -18,20 +18,27 @@ function getComputerChoice () {
 
 function getHumanChoice () {
     return input;
-
 }
 
-let humanChoice = getHumanChoice().charAt(0).toUpperCase() + getHumanChoice().slice(1);
-let computerChoice = getComputerChoice();
+const humanSelection = getHumanChoice().charAt(0).toUpperCase() + getHumanChoice().slice(1);
+const computerSelection = getComputerChoice();
 
-function playGame (humanChoice, computerChoice) {
-    if (humanChoice === computerChoice) {
+function playGame (humanSelection, computerSelection) {
+
+    if (humanSelection === computerSelection) {
         return 'Draw'
-    } else if (humanChoice === 'Paper' && computerChoice === 'Rock') {
-        'You Win';
+    } else if (computerSelection == 'Paper' && humanSelection == 'Rock'){
+        return 'You Lose'
+    } else if (computerSelection == 'Rock' && humanSelection == 'Scissors'){
+        return 'You lose'
+    } else if (computerSelection == 'Scissors' && humanSelection == 'Paper'){
+        return 'You Lose'
+    } else {
+        return 'You Win!'
     }
 }
 
-playGame(humanChoice, computerChoice)
-console.log(humanChoice)
-console.log(computerChoice)
+console.log(playGame(humanSelection, computerSelection))
+console.log(computerSelection)
+console.log(humanSelection)
+/*console.log(computerChoice)*/
