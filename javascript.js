@@ -23,21 +23,16 @@ const computerSelection = getComputerChoice();
 function playRound (humanSelection, computerSelection) {
 
     if (computerSelection === humanSelection) {
-        return 'Draw'
-    } else if (computerSelection == 'Paper' && humanSelection == 'Rock'){
-        return 'You Lose'
-    } else if (computerSelection == 'Rock' && humanSelection == 'Scissors'){
-        return 'You lose'
-    } else if (computerSelection == 'Scissors' && humanSelection == 'Paper'){
-        return 'You Lose'
+        return 'Draw, Try again!';
+    } else if ((computerSelection == 'Paper' && humanSelection == 'Rock') || (computerSelection == 'Rock' && humanSelection == 'Scissors') || (computerSelection == 'Scissors' && humanSelection == 'Paper')){
+        return 'You Lose, ' + computerSelection + ' beats ' + humanSelection + '!';
     } else {
-        return 'You Win!'
+        return 'You Win, ' + humanSelection + ' beats ' + computerSelection + '!';
     }
 }
-
 
 
 console.log(playRound(humanSelection, computerSelection))
 console.log(computerSelection)
 console.log(humanSelection)
-/*console.log(computerChoice)*/
+
