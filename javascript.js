@@ -1,4 +1,3 @@
-
 function getComputerChoice () {
     let randomNumber = Math.floor(Math.random() * 3);
 
@@ -40,7 +39,7 @@ function currentScore () {
 }
 
 function playGame(){
-    for (let i = 0; i <= 5; i++) {
+    for (let i = 0; i <= 4; i++) {
         playRound();  
     }
     winner();
@@ -55,4 +54,3 @@ function winner () {
         alert('Draw, Play Again!')
     }
 }
-
