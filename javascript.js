@@ -36,6 +36,7 @@ function playRound () {
 
 function currentScore () {
     console.log('Score: Human: ' + humanScore + ' Computer: ' + computerScore);
+    console.log('------------------------------------------------------');
 }
 
 function playGame(){
@@ -48,8 +49,10 @@ function playGame(){
 function winner () {
     if (humanScore > computerScore) {
         alert('You Win!')
-    } else {
+    } else if (computerScore > humanScore) {
         alert('Computer Wins!')
+    } else {
+        alert('Draw, Play Again!')
     }
 }
 
