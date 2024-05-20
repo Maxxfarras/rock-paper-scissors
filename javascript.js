@@ -1,6 +1,4 @@
 
-/*let input = prompt('Choose Rock, Paper or Scissors!')*/
-
 function getComputerChoice () {
     let randomNumber = Math.floor(Math.random() * 3);
 
@@ -13,34 +11,28 @@ function getComputerChoice () {
     }
 }
 
-function getHumanChoice () {
-    let input = prompt('Choose Rock, Paper or Scissors!');
-    input = input.charAt(0).toUpperCase() + input.slice(1); 
-}
-console.log(getHumanChoice());
-
-const humanSelection = getHumanChoice()/*.charAt(0).toUpperCase() + getHumanChoice().slice(1)*/;
-const computerSelection = getComputerChoice();
-
 let humanScore = 0
 let computerScore = 0 
 
 function playRound () {
 
+    let input = prompt('Write Rock, Paper or Scissors');
+    const humanSelection = input.charAt(0).toUpperCase() + input.slice(1).toLowerCase();
+    const computerSelection = getComputerChoice();
+
     if (computerSelection === humanSelection) {
-        alert('Draw, Try again!');
+        console.log('Draw, Try again!');
         currentScore();
     } else if ((computerSelection == 'Paper' && humanSelection == 'Rock') || (computerSelection == 'Rock' && humanSelection == 'Scissors') || (computerSelection == 'Scissors' && humanSelection == 'Paper')) {
-        alert('You Lose, ' + computerSelection + ' beats ' + humanSelection + '! ');
+        console.log('You Lose, ' + computerSelection + ' beats ' + humanSelection + '! ');
         computerScore+=1;
         currentScore();
     } else {
-        alert ('You Win, ' + humanSelection + ' beats ' + computerSelection + '! ');
+        console.log('You Win, ' + humanSelection + ' beats ' + computerSelection + '! ');
         humanScore+=1;
         currentScore();
     }
 }
-
 
 function currentScore () {
     console.log('Score: Human: ' + humanScore + ' Computer: ' + computerScore);
