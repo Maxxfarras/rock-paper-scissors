@@ -18,7 +18,7 @@ function playRound () {
     let input = prompt('Write Rock, Paper or Scissors');
     const humanSelection = input.charAt(0).toUpperCase() + input.slice(1).toLowerCase();
     const computerSelection = getComputerChoice();
-
+    
     if (computerSelection === humanSelection) {
         console.log('Draw, Try again!');
         currentScore();
