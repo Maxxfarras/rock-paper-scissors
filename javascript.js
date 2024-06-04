@@ -10,60 +10,32 @@ function getComputerChoice () {
     }
 }
 
-let buttonRock = document.querySelector('.button-rock')
-let buttonPaper = document.querySelector('.button-paper')
-let buttonScissors = document.querySelector('.button-paper')
-
-let selectionRock = buttonRock.addEventListener('click', () => {
-    return 'Rock'
-});
-    
-let selectionPaper = buttonPaper.addEventListener('click', () => {
-    return 'Paper'
-});
-    
-let selectionScissors = buttonScissors.addEventListener('click', () => {
-    return 'Scissors'
-});
+const allButtons = document.querySelectorAll('.button');
 
 let humanScore = 0
 let computerScore = 0 
 
-function playRound () {
+function playRound (humanSelection) {
     const computerSelection = getComputerChoice();
-    
+    let result = '';
+
     if (computerSelection === humanSelection) {
-        console.log('Draw, Try again!');
-        currentScore();
+        result = 'Draw, Try again!';
+        
     } else if ((computerSelection == 'Paper' && humanSelection == 'Rock') || (computerSelection == 'Rock' && humanSelection == 'Scissors') || (computerSelection == 'Scissors' && humanSelection == 'Paper')) {
-        console.log('You Lose, ' + computerSelection + ' beats ' + humanSelection + '! ');
+        result = ('You Lose, ' + computerSelection + ' beats ' + humanSelection + '! ');
         computerScore+=1;
-        currentScore();
     } else {
-        console.log('You Win, ' + humanSelection + ' beats ' + computerSelection + '! ');
+        result = ('You Win, ' + humanSelection + ' beats ' + computerSelection + '! ');
         humanScore+=1;
-        currentScore();
     }
+
+    document.querySelector('.result').innerHTML = result;
+    return;
 }
 
-function currentScore () {
-    console.log('Score: Human: ' + humanScore + ' Computer: ' + computerScore);
-    console.log('------------------------------------------------------');
-}
-
-/*function playGame(){
-    for (let i = 0; i <= 4; i++) {
-        playRound();  
-    }
-    winner();
-}*/
-
-function winner () {
-    if (humanScore > computerScore) {
-        alert('You Win!')
-    } else if (computerScore > humanScore) {
-        alert('Computer Wins!')
-    } else {
-        alert('Draw, Play Again!')
-    }
-}
+allButtons.forEach(bt => {
+    bt.addEventListener('click', () => {
+        playRound(bt.innerHTML)
+    })
+});
