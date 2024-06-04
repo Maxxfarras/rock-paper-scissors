@@ -14,17 +14,16 @@ let buttonRock = document.querySelector('.button-rock')
 let buttonPaper = document.querySelector('.button-paper')
 let buttonScissors = document.querySelector('.button-paper')
 
-buttonRock.addEventListener('click', () => {
-    let buttonSelection = 'Rock'
-});
-
-    
-buttonPaper.addEventListener('click', () => {
-    let buttonSelection = 'Paper'
+let selectionRock = buttonRock.addEventListener('click', () => {
+    return 'Rock'
 });
     
-buttonScissors.addEventListener('click', () => {
-    let buttonSelection = 'Scissors'
+let selectionPaper = buttonPaper.addEventListener('click', () => {
+    return 'Paper'
+});
+    
+let selectionScissors = buttonScissors.addEventListener('click', () => {
+    return 'Scissors'
 });
 
 let humanScore = 0
