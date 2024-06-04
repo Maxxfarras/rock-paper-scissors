@@ -10,6 +10,12 @@ function getComputerChoice () {
     }
 }
 
+function disableButtons () {
+    allButtons.forEach(btn => {
+        btn.disable = true; 
+    });
+}
+
 const allButtons = document.querySelectorAll('.button');
 
 let humanScore = 0
@@ -20,15 +26,27 @@ function playRound (humanSelection) {
     let result = '';
 
     if (computerSelection === humanSelection) {
-        result = 'Draw, Try again!';
-        
-    } else if ((computerSelection == 'Paper' && humanSelection == 'Rock') || (computerSelection == 'Rock' && humanSelection == 'Scissors') || (computerSelection == 'Scissors' && humanSelection == 'Paper')) {
-        result = ('You Lose, ' + computerSelection + ' beats ' + humanSelection + '! ');
+        result = ('Draw, Try again! '
+        + '<br><br>Player Score: ' + humanScore + '<br>Computer Score: ' + computerScore);
+
+    } else if ((computerSelection == 'Paper' && humanSelection == 'Rock') ||
+               (computerSelection == 'Rock' && humanSelection == 'Scissors') ||
+               (computerSelection == 'Scissors' && humanSelection == 'Paper')) {
         computerScore+=1;
+        result = ('You Lose, ' + computerSelection + ' beats ' + humanSelection + '!'
+        + '<br><br>Player Score: ' + humanScore + '<br>Computer Score: ' + computerScore);
+        if (computerScore === 5) {
+            result = ('<br><br>Computer Wins, Reload page to play again!')
+        }
     } else {
-        result = ('You Win, ' + humanSelection + ' beats ' + computerSelection + '! ');
         humanScore+=1;
+        result = ('You Win, ' + humanSelection + ' beats ' + computerSelection + '!'
+        + '<br><br>Player Score: ' + humanScore + '<br>Computer Score: ' + computerScore);
+        if (humanScore === 5) {
+            result = ('<br><br>You Win, Reload page to play again!')
+        }
     }
+
 
     document.querySelector('.result').innerHTML = result;
     return;
