@@ -38,12 +38,12 @@ function currentScore () {
     console.log('------------------------------------------------------');
 }
 
-function playGame(){
+/*function playGame(){
     for (let i = 0; i <= 4; i++) {
         playRound();  
     }
     winner();
-}
+}*/
 
 function winner () {
     if (humanScore > computerScore) {
