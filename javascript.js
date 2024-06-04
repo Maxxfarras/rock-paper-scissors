@@ -10,13 +10,27 @@ function getComputerChoice () {
     }
 }
 
+let buttonRock = document.querySelector('.button-rock')
+let buttonPaper = document.querySelector('.button-paper')
+let buttonScissors = document.querySelector('.button-paper')
+
+buttonRock.addEventListener('click', () => {
+    let buttonSelection = 'Rock'
+});
+
+    
+buttonPaper.addEventListener('click', () => {
+    let buttonSelection = 'Paper'
+});
+    
+buttonScissors.addEventListener('click', () => {
+    let buttonSelection = 'Scissors'
+});
+
 let humanScore = 0
 let computerScore = 0 
 
 function playRound () {
-
-    let input = prompt('Write Rock, Paper or Scissors');
-    const humanSelection = input.charAt(0).toUpperCase() + input.slice(1).toLowerCase();
     const computerSelection = getComputerChoice();
     
     if (computerSelection === humanSelection) {
