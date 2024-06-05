@@ -3,8 +3,28 @@ body {
     background-image: url(./images/background.png);
     background-repeat: no-repeat;
     background-size: cover;
+    display: flex;
+    justify-content: center;
+}
+
+.button {
+    background-color: transparent;
+    border-color: transparent;
 }
 
 img {
     max-width: 100px;
+}
+
+.container {
+    background-color: aquamarine;
+    margin: 50px;
+    margin-top: 250px;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+h1 {
+    
 }
