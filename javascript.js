@@ -12,14 +12,14 @@ function getComputerChoice () {
 
 function disableButtons () {
     allButtons.forEach(btn => {
-        btn.disable = true; 
+        btn.disabled = true; 
     });
 }
 
 const allButtons = document.querySelectorAll('.button');
 
-let humanScore = 0
-let computerScore = 0 
+let humanScore = 0;
+let computerScore = 0; 
 
 function playRound (humanSelection) {
     const computerSelection = getComputerChoice();
@@ -36,7 +36,8 @@ function playRound (humanSelection) {
         result = ('You Lose, ' + computerSelection + ' beats ' + humanSelection + '!'
         + '<br><br>Player Score: ' + humanScore + '<br>Computer Score: ' + computerScore);
         if (computerScore === 5) {
-            result = ('<br><br>Computer Wins, Reload page to play again!')
+            result = ('<br><br>Computer Wins, Reload page to play again!');
+            disableButtons();
         }
     } else {
         humanScore+=1;
@@ -44,7 +45,8 @@ function playRound (humanSelection) {
         + '<br><br>Player Score: ' + humanScore + '<br>Computer Score: ' + computerScore);
         if (humanScore === 5) {
             result = ('<br><br>You Win, Reload page to play again!')
-        }
+            disableButtons();
+        };
     }
 
 
