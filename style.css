@@ -1,0 +1,10 @@
+body {
+    margin: 0;
+    background-image: url(./images/background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+img {
+    max-width: 100px;
+}
