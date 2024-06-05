@@ -10,6 +10,7 @@ body {
 .button {
     background-color: transparent;
     border-color: transparent;
+    margin: 0 20px;
 }
 
 img {
@@ -17,14 +18,35 @@ img {
 }
 
 .container {
-    background-color: aquamarine;
+    background-color: rgb(247, 101, 101);
     margin: 50px;
     margin-top: 250px;
     padding: 30px;
     border-radius: 10px;
+    border-color: black;
+    border-style: double;
+    border-width: 20px;
     text-align: center;
 }
 
 h1 {
-    
+    margin-top: 0%;
+    font-size: 50px;
+    font-weight: 900;
+}
+
+.result {
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.scissors {
+    rotate: 90deg;
+    margin-left: 60px;
+}
+
+.button-row {
+    display: flex;
+    justify-content: center;
+    margin-top: 0;
 }
