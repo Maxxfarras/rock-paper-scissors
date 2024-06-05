@@ -56,6 +56,6 @@ function playRound (humanSelection) {
 
 allButtons.forEach(bt => {
     bt.addEventListener('click', () => {
-        playRound(bt.innerHTML)
-    })
+        playRound(bt.value)
+    });
 });
